@@ -1,9 +1,54 @@
-<header class="bg-secondary">
-  <div class="container text-center py-5">
-    <h1>Home Renovation Program</h1>
+<header class="bg-secondary text-white py-5">
+  <div class="container text-center">
+    <h1 class="display-4">Vidéki Otthonfelújítási Program</h1>
+    <p class="lead">
+      Támogatások vidéki családok számára otthonaik felújításához
+    </p>
   </div>
 </header>
-<main>
-  <app-calculators> </app-calculators>
-  <app-works-list> </app-works-list>
+
+<main class="container my-5">
+  <section>
+    <h2 class="text-primary mb-4">Főbb tudnivalók</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        <strong>Legalább egy 25 év alatti gyermeket</strong> nevelő szülők
+        vehették igénybe.
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        A család <strong>legalább 1 éve lakóhellyel rendelkezzen</strong> a
+        támogatással érintett ingatlanban
+        <span class="text-muted">(kivétel adásvétel vagy építkezés esetén)</span
+        >.
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        <strong>Minimum 1 éves, folyamatos TB jogviszony</strong> szükséges az
+        igényléshez.
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        Legfeljebb
+        <strong>3 millió forint vissza nem térítendő támogatást</strong>
+        lehetett igényelni ingatlanfelújításra.
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        Az állam a <strong>felújítási költségek 50 százalékáig</strong>, de
+        legfeljebb 3 millió forintig támogatta a renoválást.
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        A felújítás előfinanszírozásához
+        <strong>kedvezményes kamatú jelzáloghitelt</strong> lehetett felvenni,
+        melybe a támogatás betörlesztésre került.
+      </li>
+    </ul>
+  </section>
 </main>
+<section class="container my-5">
+  <app-calculations></app-calculations>
+  <app-works-list></app-works-list>
+</section>
