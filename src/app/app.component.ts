@@ -19,4 +19,12 @@ export class AppComponent {
       this.showLoans = false; // Rejtsük el a Loans komponenst
     }
   }
+
+  // Görgetési funkció
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
