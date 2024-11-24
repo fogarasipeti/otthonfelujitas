@@ -1,0 +1,47 @@
+<div class="container mt-5" *ngIf="totalAmount > 0">
+  <h3 class="text-center mb-4">Kölcsönajánlatok</h3>
+  <div class="row g-4">
+    <!-- Személyi Kölcsön Kártya -->
+    <div class="col-md-6">
+      <div class="card shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">Személyi Kölcsön</h5>
+          <p class="card-text">
+            Hitelösszeg: <strong>{{ totalAmount | number : "1.0-0" }} Ft</strong
+            ><br />
+            Futamidő: <strong>84 hónap</strong><br />
+            Éves kamat: <strong>8%</strong><br />
+            Törlesztőrészlet:
+            <span class="text-primary fs-4 fw-bold">
+              {{ personalLoanMonthlyPayment | number : "1.0-0" }} Ft/hó
+            </span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-primary w-100">Érdekel</button>
+        </div>
+      </div>
+    </div>
+    <!-- Otthonfelújítási Kölcsön Kártya -->
+    <div class="col-md-6">
+      <div class="card shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">Otthonfelújítási Kölcsön</h5>
+          <p class="card-text">
+            Hitelösszeg: <strong>{{ totalAmount | number : "1.0-0" }} Ft</strong
+            ><br />
+            Futamidő: <strong>120 hónap</strong><br />
+            Éves kamat: <strong>3%</strong><br />
+            Törlesztőrészlet:
+            <span class="text-success fs-4 fw-bold">
+              {{ homeRenovationLoanMonthlyPayment | number : "1.0-0" }} Ft/hó
+            </span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-success w-100">Érdekel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

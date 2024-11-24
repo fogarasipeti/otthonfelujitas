@@ -1,54 +1,409 @@
-<header class="bg-secondary text-white py-5">
-  <div class="container text-center">
-    <h1 class="display-4">Vidéki Otthonfelújítási Program</h1>
-    <p class="lead">
-      Támogatások vidéki családok számára otthonaik felújításához
-    </p>
+<header
+  class="position-relative"
+  style="
+    background: url('/assets/header.jpg') no-repeat top center;
+    background-size: contain;
+    background-attachment: fixed;
+    height: 450px;
+  "
+>
+  <div
+    class="container h-100 d-flex flex-column justify-content-between text-center"
+  >
+    <!-- Top Section: Title and Subtitle -->
+    <div class="mt-3">
+      <h1 class="display-4 fw-bold text-primary text-shadow">
+        Vidéki Otthonfelújítási Program
+      </h1>
+      <p class="lead text-primary text-shadow">
+        Támogatások vidéki családok számára otthonaik felújításához
+      </p>
+    </div>
+
+    <!-- Bottom Section: Button -->
+    <div class="mb-3">
+      <button
+        class="btn btn-light text-primary fw-bold px-4 py-2 rounded-pill shadow"
+      >
+        További információk
+      </button>
+    </div>
   </div>
 </header>
 
-<main class="container my-5">
+<main class="container my-3">
+  <!-- Főbb tudnivalók -->
   <section>
-    <h2 class="text-primary mb-4">Főbb tudnivalók</h2>
-    <ul class="list-group">
-      <li class="list-group-item">
-        <i class="bi bi-check-circle-fill text-success me-2"></i>
-        <strong>Legalább egy 25 év alatti gyermeket</strong> nevelő szülők
-        vehették igénybe.
-      </li>
-      <li class="list-group-item">
-        <i class="bi bi-check-circle-fill text-success me-2"></i>
-        A család <strong>legalább 1 éve lakóhellyel rendelkezzen</strong> a
-        támogatással érintett ingatlanban
-        <span class="text-muted">(kivétel adásvétel vagy építkezés esetén)</span
-        >.
-      </li>
-      <li class="list-group-item">
-        <i class="bi bi-check-circle-fill text-success me-2"></i>
-        <strong>Minimum 1 éves, folyamatos TB jogviszony</strong> szükséges az
-        igényléshez.
-      </li>
-      <li class="list-group-item">
-        <i class="bi bi-check-circle-fill text-success me-2"></i>
-        Legfeljebb
-        <strong>3 millió forint vissza nem térítendő támogatást</strong>
-        lehetett igényelni ingatlanfelújításra.
-      </li>
-      <li class="list-group-item">
-        <i class="bi bi-check-circle-fill text-success me-2"></i>
-        Az állam a <strong>felújítási költségek 50 százalékáig</strong>, de
-        legfeljebb 3 millió forintig támogatta a renoválást.
-      </li>
-      <li class="list-group-item">
-        <i class="bi bi-check-circle-fill text-success me-2"></i>
-        A felújítás előfinanszírozásához
-        <strong>kedvezményes kamatú jelzáloghitelt</strong> lehetett felvenni,
-        melybe a támogatás betörlesztésre került.
-      </li>
-    </ul>
+    <div class="accordion shadow-sm rounded" id="infoAccordion">
+      <div class="accordion-item border-0">
+        <h2 class="accordion-header" id="headingInfo">
+          <button
+            class="accordion-button collapsed bg-light text-primary border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseInfo"
+            aria-expanded="false"
+            aria-controls="collapseInfo"
+          >
+            <strong>Főbb tudnivalók</strong>
+          </button>
+        </h2>
+        <div
+          id="collapseInfo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingInfo"
+          data-bs-parent="#infoAccordion"
+        >
+          <div class="accordion-body text-secondary">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong>Legalább egy 25 év alatti gyermeket</strong> nevelő
+                szülők vehették igénybe.
+              </li>
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                A család
+                <strong>legalább 1 éve lakóhellyel rendelkezzen</strong> a
+                támogatással érintett ingatlanban
+                <span class="text-muted"
+                  >(kivétel adásvétel vagy építkezés esetén)</span
+                >.
+              </li>
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong>Minimum 1 éves, folyamatos TB jogviszony</strong>
+                szükséges az igényléshez.
+              </li>
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Legfeljebb
+                <strong>3 millió forint vissza nem térítendő támogatást</strong>
+                lehetett igényelni ingatlanfelújításra.
+              </li>
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Az állam a <strong>felújítási költségek 50 százalékáig</strong>,
+                de legfeljebb 3 millió forintig támogatta a renoválást.
+              </li>
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                A felújítás előfinanszírozásához
+                <strong>kedvezményes kamatú jelzáloghitelt</strong> lehetett
+                felvenni, melybe a támogatás betörlesztésre került.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milyen felújításokra lehet felhasználni -->
+  <section class="mt-4 mb-2">
+    <div class="accordion shadow-sm rounded" id="worksAccordion">
+      <div class="accordion-item border-0">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button collapsed bg-light text-primary border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            <strong
+              >Milyen felújításokra lehet felhasználni a támogatást?</strong
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#worksAccordion"
+        >
+          <div class="accordion-body text-secondary">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Víz-, csatorna-, elektromos-, gáz-közműszolgáltatás bevezetése,
+                illetve belső/külső hálózat kiépítése vagy cseréje.
+              </li>
+              <li class="list-group-item">
+                Fürdőhelyiség vagy WC létesítése olyan lakásban, amely nem
+                rendelkezik ilyen helyiséggel.
+              </li>
+              <li class="list-group-item">
+                Fűtési rendszer kialakítása, korszerűsítése, vagy elemeinek
+                cseréje, beleértve a megújuló energiaforrások alkalmazását.
+              </li>
+              <li class="list-group-item">
+                Épület külső festése, színezése, szigetelése (hő-, hang-,
+                vízszigetelés).
+              </li>
+              <li class="list-group-item">
+                Külső nyílászárók beépítése, cseréje, redőny, árnyékoló, vagy
+                egyéb kiegészítők felszerelése.
+              </li>
+              <li class="list-group-item">
+                Tető cseréje, felújítása, szigetelése.
+              </li>
+              <li class="list-group-item">
+                Égéstermék-elvezető építése, korszerűsítése.
+              </li>
+              <li class="list-group-item">
+                Klímaberendezés beépítése vagy cseréje.
+              </li>
+              <li class="list-group-item">
+                Napkollektor vagy napelemes rendszer telepítése.
+              </li>
+              <li class="list-group-item">
+                Belső tér felújítása, ideértve festés, burkolás, galériaépítés,
+                szaniterek beépítése, világítótestek cseréje.
+              </li>
+              <li class="list-group-item">
+                Lakáson kívüli épületek felújítása (pl. nyári konyha, tároló).
+              </li>
+              <li class="list-group-item">Kerítés építése vagy felújítása.</li>
+              <li class="list-group-item">
+                Gépjárműtároló építése vagy felújítása, nyitott gépkocsibeálló
+                kialakítása.
+              </li>
+              <li class="list-group-item">
+                Terasz, loggia, erkély, előtető építése, felújítása.
+              </li>
+              <li class="list-group-item">
+                Térburkolat vagy külső lépcső készítése.
+              </li>
+              <li class="list-group-item">Télikert kialakítása.</li>
+              <li class="list-group-item">Akadálymentesítési munkálatok.</li>
+              <li class="list-group-item">Alapozási szerkezet megerősítése.</li>
+              <li class="list-group-item">
+                Beépíthető bútorok vagy konyhai gépek beépítése, cseréje.
+              </li>
+              <li class="list-group-item">
+                Használati melegvíz-rendszer kialakítása vagy korszerűsítése.
+              </li>
+              <li class="list-group-item">
+                Szellőzési rendszer kialakítása, korszerűsítése.
+              </li>
+              <li class="list-group-item">
+                Egyedi szennyvízkezelő berendezés telepítése vagy cseréje.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="accordion shadow-sm rounded mb-2" id="invoiceAccordion">
+      <div class="accordion-item border-0">
+        <h2 class="accordion-header" id="headingInvoice">
+          <button
+            class="accordion-button collapsed bg-light text-primary border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseInvoice"
+            aria-expanded="false"
+            aria-controls="collapseInvoice"
+          >
+            <strong>Milyen számla fogadható el?</strong>
+          </button>
+        </h2>
+        <div
+          id="collapseInvoice"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingInvoice"
+          data-bs-parent="#invoiceAccordion"
+        >
+          <div class="accordion-body text-secondary">
+            <p>
+              <strong
+                >A munkálatok teljesítését igazoló számlaként az alábbiak
+                fogadhatók el:</strong
+              >
+            </p>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item bg-light">
+                Saját nevére szóló számla.
+              </li>
+              <li class="list-group-item bg-light">
+                Az általános forgalmi adóról szóló törvény hatálya alá tartozó
+                termékértékesítésről, illetve szolgáltatásnyújtásról kiállított
+                számla.
+              </li>
+              <li class="list-group-item bg-light">
+                Felújítással kapcsolatos tervezési, építési, szerelési
+                munkálatok tekintetében egy vagy több, a vállalkozási szerződés
+                vagy szerződések szerinti vállalkozó által kiállított számla.
+              </li>
+            </ul>
+            <p>
+              A felújítással kapcsolatos munkálatokat végző vállalkozó által
+              kiállított számla csak akkor fogadható el, ha a vállalkozó az
+              igénylőnek
+              <strong>nem közeli hozzátartozója vagy élettársa</strong>, vagy
+              gazdálkodó szervezet esetében az igénylő vagy az igénylő közeli
+              hozzátartozója vagy élettársa, annak nem tagja, munkavállalója
+              vagy vezető tisztségviselője.
+            </p>
+            <p>
+              A támogatás az
+              <strong
+                >5%-os általános forgalmi adómértékkel kiállított számla</strong
+              >
+              vonatkozásában <strong>nem vehető igénybe</strong>.
+            </p>
+            <p><strong>Nem fogadható el:</strong></p>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item bg-light">
+                Az olyan számla, amelyet a felújítással érintett lakás
+                vonatkozásában, falusi CSOK igénylése során már elszámoltak.
+              </li>
+            </ul>
+            <p><strong>Külön szabályok napelemes rendszer esetében:</strong></p>
+            <p>
+              Napelemes rendszer telepítését vagy cseréjét igazoló számla esetén
+              az abban feltüntetett anyagköltség és kapcsolódó vállalkozói díj
+              összesítve nem haladhatja meg a bruttó
+              <strong>450 000 Ft/kWp</strong> összeget.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="accordion shadow-sm rounded mb-2" id="documentAccordion">
+      <div class="accordion-item border-0">
+        <h2 class="accordion-header" id="headingDocuments">
+          <button
+            class="accordion-button collapsed bg-light text-primary border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseDocuments"
+            aria-expanded="false"
+            aria-controls="collapseDocuments"
+          >
+            <strong>Igényléshez szükséges dokumentumok</strong>
+          </button>
+        </h2>
+        <div
+          id="collapseDocuments"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingDocuments"
+          data-bs-parent="#documentAccordion"
+        >
+          <div class="accordion-body text-secondary">
+            <h4 class="text-primary">Kötelezően benyújtandó dokumentumok</h4>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item bg-light">
+                Vállalkozási szerződések másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Számlák, valamint az átutalással teljesített számlák kifizetését
+                igazoló dokumentum másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Az igénylő(k)nek és a támogatásra való jogosultságnál figyelembe
+                vett gyermek(ek) lakcímet igazoló hatósági igazolványának
+                másolata
+              </li>
+              <li class="list-group-item bg-light">Számlaösszesítő</li>
+              <li class="list-group-item bg-light">
+                Az igénylő büntetőjogi felelőssége tudatában tett nyilatkozata a
+                megfelelő TB jogviszonyról
+              </li>
+              <li class="list-group-item bg-light">
+                A kérelem benyújtásához képest 15 napon belül kiállított
+                adóigazolás
+              </li>
+              <li class="list-group-item bg-light">
+                Személyazonosság igazolására személyazonosító igazolvány,
+                útlevél vagy kártyaformátumú vezetői engedély másolata
+              </li>
+            </ul>
+            <h4 class="text-primary">Speciálisan benyújtandó dokumentumok</h4>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item bg-light">
+                Várandósság 12. hetét betöltött magzat esetén: várandósgondozási
+                kiskönyv vagy a kezelőorvos által kiállított igazolás a
+                várandósság tényéről
+              </li>
+              <li class="list-group-item bg-light">
+                Örökbefogadott gyermek esetén: gyámhatóság határozatának
+                másolata
+              </li>
+              <li class="list-group-item bg-light">
+                25. életévét betöltött gyermek esetén: megváltozott
+                munkaképességű személlyé válásról szóló, orvosszakértői szerv
+                által kiállított igazolás másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Megváltozott munkaképességű személy esetén: az ezt igazoló
+                dokumentumok másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Gyámság esetén: gyámhatósági határozat másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Mozgáskorlátozott személyhez kapcsolódó akadálymentesítési
+                munkák esetén: a mozgáskorlátozottságról szóló igazolás másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Több lakásból álló közös tulajdonú ingatlan esetén: közokirat
+                vagy ügyvéd által ellenjegyzett magánokirat másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Szülői lemondó nyilatkozat: teljes bizonyító erejű
+                magánokiratban tett nyilatkozat
+              </li>
+              <li class="list-group-item bg-light">
+                Hozzájáruló nyilatkozat: házastárs/élettárs magánokiratba
+                foglalt hozzájárulása
+              </li>
+              <li class="list-group-item bg-light">
+                Kiegészítő tevékenység folytatása esetén: megfelelő hatósági
+                dokumentum másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Az igénylést megelőzően külföldön fennálló munkaviszony esetén:
+                hiteles magyar nyelvű fordítás
+              </li>
+              <li class="list-group-item bg-light">
+                Nem magyar állampolgár esetén: érvényes tartózkodási kártya vagy
+                állandó tartózkodási kártya másolata
+              </li>
+              <li class="list-group-item bg-light">
+                GYOD vagy ápolási díj esetén: megfelelő hatósági határozat
+                másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Nagykorú, de 25 év alatti gyermek esetén: adatkezelési
+                hozzájárulása
+              </li>
+              <li class="list-group-item bg-light">
+                Falusi CSOK esetén: családi otthonteremtési kedvezményhez
+                kapcsolódó dokumentumok másolata
+              </li>
+              <li class="list-group-item bg-light">
+                Napelemes rendszer telepítése vagy cseréje esetén: vállalkozói
+                nyilatkozat az anyagköltség és díjak összesítéséről
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 <section class="container my-5">
-  <app-calculations></app-calculations>
-  <app-works-list></app-works-list>
+  <app-calculations
+    (calculationCompleted)="onCalculationResult($event)"
+  ></app-calculations>
+  <app-loans *ngIf="showLoans" [totalAmount]="totalAmount"></app-loans>
+  <app-discounts [showDiscounts]="showLoans"></app-discounts>
 </section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-calculations',
@@ -12,29 +12,34 @@ export class CalculationsComponent {
   result: number | null = null;
   totalAmount: number = 0;
 
+  @Output() calculationCompleted = new EventEmitter<number | null>();
+
   calculate() {
     this.totalAmount = this.materialCost + this.laborCost;
 
-    // Check if individual costs are at least 25% of the total amount
     const isMaterialValid = this.materialCost >= this.totalAmount * 0.25;
     const isLaborValid = this.laborCost >= this.totalAmount * 0.25;
 
     if (!isMaterialValid || !isLaborValid) {
-      // Calculate based on the smaller of the two costs
       const eligibleCost = Math.min(this.materialCost, this.laborCost) * 2;
       this.result = Math.min(eligibleCost, 3000000 - this.previousSupport);
     } else {
-      // Apply the 50-50% rule
       const support = this.materialCost * 0.5 + this.laborCost * 0.5;
       this.result = Math.min(support, 3000000 - this.previousSupport);
     }
+
+    // Küldjük el az eredményt az AppComponent-nek
+    this.calculationCompleted.emit(this.totalAmount);
   }
 
   reset() {
     this.materialCost = 0;
     this.laborCost = 0;
     this.previousSupport = 0;
-    this.totalAmount = 0;
     this.result = null;
+    this.totalAmount = 0;
+
+    // Nullázzuk az eseményt
+    this.calculationCompleted.emit(null);
   }
 }
