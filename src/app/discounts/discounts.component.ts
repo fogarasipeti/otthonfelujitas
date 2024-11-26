@@ -13,23 +13,23 @@ export class DiscountsComponent {
       name: 'Energiatakarékos Hűtőszekrény',
       description:
         'Csökkentsd energiafogyasztásodat ezzel a modern hűtőszekrénnyel.',
-      image: 'https://picsum.photos/200?random=1',
+      image: '/assets/discount1.jpg',
     },
     {
       name: 'Napkollektor rendszer',
       description:
         'Telepíts napkollektort otthonodba és takaríts meg energiát.',
-      image: 'https://picsum.photos/200?random=2',
+      image: '/assets/discount2.jpg',
     },
     {
       name: 'Korszerű Nyílászárók',
       description: 'Tartsd bent a meleget új, szigetelt nyílászárókkal.',
-      image: 'https://picsum.photos/200?random=3',
+      image: '/assets/discount3.jpg',
     },
     {
       name: 'Modern LED Világítás',
       description: 'Csökkentsd a villanyszámlád LED izzókkal.',
-      image: 'https://picsum.photos/200?random=4',
+      image: '/assets/discount4.jpg',
     },
   ];
 }

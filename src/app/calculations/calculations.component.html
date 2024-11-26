@@ -1,9 +1,10 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-12 col-md-8 mx-auto">
-      <div class="card shadow-sm">
+    <!-- Kalkulátor -->
+    <div class="col-md-8">
+      <div class="card calculator-card shadow-lg">
         <div class="card-body">
-          <h4 class="card-title text-center">
+          <h4 class="card-title text-center text-uppercase fw-bold mb-4">
             Vidéki Otthonfelújítási Program Kalkulátor
           </h4>
           <form (ngSubmit)="calculate()">
@@ -14,7 +15,7 @@
                 >
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control custom-input"
                   id="materialCost"
                   [(ngModel)]="materialCost"
                   name="materialCost"
@@ -25,7 +26,7 @@
                 <label for="laborCost" class="form-label">Munkadíj (Ft)</label>
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control custom-input"
                   id="laborCost"
                   [(ngModel)]="laborCost"
                   name="laborCost"
@@ -39,7 +40,7 @@
               >
               <input
                 type="number"
-                class="form-control"
+                class="form-control custom-input"
                 id="previousSupport"
                 [(ngModel)]="previousSupport"
                 name="previousSupport"
@@ -47,42 +48,45 @@
               />
             </div>
             <div class="d-flex justify-content-between mt-4">
-              <button type="submit" class="btn btn-primary w-50 me-2">
+              <button
+                type="submit"
+                class="btn btn-primary custom-btn w-50 me-2"
+              >
                 Mekkora támogatást kaphatok?
               </button>
               <button
                 type="button"
-                class="btn btn-secondary w-50"
+                class="btn btn-secondary custom-btn w-50"
                 (click)="reset()"
               >
                 Törlés
               </button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
 
-          <div *ngIf="result !== null" class="mt-4">
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="card text-center shadow">
-                  <div class="card-body">
-                    <h5 class="card-title">Számla bruttó összege</h5>
-                    <p class="card-text fs-4 fw-bold text-primary">
-                      {{ totalAmount | number : "1.0-0" }} Ft
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card text-center shadow">
-                  <div class="card-body">
-                    <h5 class="card-title">Támogatás összege</h5>
-                    <p class="card-text fs-4 fw-bold text-success">
-                      {{ result | number : "1.0-0" }} Ft
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!-- Új szekció -->
+    <div class="col-md-4">
+      <div class="card new-section-card shadow-lg">
+        <div class="card-body">
+          <h5 class="text-center fw-bold mb-4">
+            Töltsd le díjmentes applikációnkat a kedvezményekért
+          </h5>
+          <div class="d-flex flex-column align-items-center">
+            <img
+              src="/assets/mobilbank.png"
+              alt="Mobilbank ikon"
+              class="icon-large mb-3"
+            />
+            <a href="#" class="btn btn-outline-primary">
+              <img
+                src="/assets/appstore.png"
+                alt="App Store ikon"
+                class="icon-large"
+              />
+            </a>
           </div>
         </div>
       </div>

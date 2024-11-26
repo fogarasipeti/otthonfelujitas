@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-calculations',
@@ -14,6 +20,9 @@ export class CalculationsComponent {
 
   @Output() calculationCompleted = new EventEmitter<number | null>();
 
+  // Referencia az app-loans szekcióhoz
+  @ViewChild('discountSection', { static: false }) discountSection!: ElementRef;
+
   calculate() {
     this.totalAmount = this.materialCost + this.laborCost;
 
@@ -28,7 +37,12 @@ export class CalculationsComponent {
       this.result = Math.min(support, 3000000 - this.previousSupport);
     }
 
-    // Küldjük el az eredményt az AppComponent-nek
+    // Görgetés az app-loans szekcióhoz
+    if (this.discountSection) {
+      this.discountSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Eredmény elküldése
     this.calculationCompleted.emit(this.totalAmount);
   }
 
@@ -39,7 +53,6 @@ export class CalculationsComponent {
     this.result = null;
     this.totalAmount = 0;
 
-    // Nullázzuk az eseményt
     this.calculationCompleted.emit(null);
   }
 }

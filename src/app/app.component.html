@@ -29,16 +29,9 @@
   </div>
 </header>
 
-<main>
-  <section id="details" class="container my-5">
-    <h2>Részletek</h2>
-    <p>Itt találhatóak a támogatási program részletei...</p>
-  </section>
-</main>
-
 <main class="container my-3">
   <!-- Főbb tudnivalók -->
-  <section>
+  <section id="details">
     <div class="accordion shadow-sm rounded" id="infoAccordion">
       <div class="accordion-item border-0">
         <h2 class="accordion-header" id="headingInfo">
@@ -61,6 +54,15 @@
         >
           <div class="accordion-body text-secondary">
             <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-light">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong
+                  >A Vidéki Otthonfelújítási Programban csak azoknak a
+                  magyarországi ingatlanoknak a felújítása történhet
+                  meg,</strong
+                >
+                amelyek 5000 főnél kisebb lakosságszámú településen fekszenek.
+              </li>
               <li class="list-group-item bg-light">
                 <i class="bi bi-check-circle-fill text-success me-2"></i>
                 <strong>Legalább egy 25 év alatti gyermeket</strong> nevelő
@@ -409,9 +411,14 @@
   <app-calculations
     (calculationCompleted)="onCalculationResult($event)"
   ></app-calculations>
-  <app-loans *ngIf="showLoans" [totalAmount]="totalAmount"></app-loans>
-  <app-discounts [showDiscounts]="showLoans"></app-discounts>
+  <app-loans
+    #loansSection
+    *ngIf="showLoans"
+    [totalAmount]="totalAmount"
+  ></app-loans>
+  <app-discounts #discountSection [showDiscounts]="showLoans"></app-discounts>
 </section>
+
 <footer class="bg-primary text-white py-5">
   <div class="container">
     <div class="row">
@@ -419,14 +426,36 @@
       <div class="col-md-3">
         <h5 class="text-uppercase fw-bold">Társaságunk</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Rólunk</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Cégcsoport</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Kapcsolat</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Jogi nyilatkozat</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Adatvédelem</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Cookie szabályzat</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Karrier</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Szolgáltatások fogyatékkal élőknek</a></li>
+          <li>
+            <a href="#" class="text-white text-decoration-none">Rólunk</a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none">Cégcsoport</a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none">Kapcsolat</a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Jogi nyilatkozat</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none">Adatvédelem</a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Cookie szabályzat</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none">Karrier</a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Szolgáltatások fogyatékkal élőknek</a
+            >
+          </li>
         </ul>
       </div>
 
@@ -434,13 +463,41 @@
       <div class="col-md-3">
         <h5 class="text-uppercase fw-bold">Hasznos információk</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Pénzügyi tippek</a></li>
-          <li><a href="#" class="text-white text-decoration-none">K&H fejlesztői portál</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Biztonságos online fizetés</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Deviza átutalás</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Direktbiztosítások</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Öröklési információk</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Tervezett karbantartások</a></li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Pénzügyi tippek</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >K&H fejlesztői portál</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Biztonságos online fizetés</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Deviza átutalás</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Direktbiztosítások</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Öröklési információk</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Tervezett karbantartások</a
+            >
+          </li>
         </ul>
       </div>
 
@@ -448,12 +505,36 @@
       <div class="col-md-3">
         <h5 class="text-uppercase fw-bold">Ügyfélvédelem</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Fizetési moratórium</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Panaszkezelés</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Gyűjtőszámlahitel információk</a></li>
-          <li><a href="#" class="text-white text-decoration-none">MNB – Pénzügyi Navigátor</a></li>
-          <li><a href="#" class="text-white text-decoration-none">OBA tájékoztató</a></li>
-          <li><a href="#" class="text-white text-decoration-none">MNB – Felelős döntésekkel a jövőnkért</a></li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Fizetési moratórium</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Panaszkezelés</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Gyűjtőszámlahitel információk</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >MNB – Pénzügyi Navigátor</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >OBA tájékoztató</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >MNB – Felelős döntésekkel a jövőnkért</a
+            >
+          </li>
         </ul>
       </div>
 
@@ -461,24 +542,52 @@
       <div class="col-md-3">
         <h5 class="text-uppercase fw-bold">Feltételek és kondíciók</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Hirdetmények</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Általános szerződési feltételek</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Üzletszabályzat</a></li>
-          <li><a href="#" class="text-white text-decoration-none">MNB – Minősített fogyasztóbarát lakáshitel</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Előzetes tájékoztatás</a></li>
+          <li>
+            <a href="#" class="text-white text-decoration-none">Hirdetmények</a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Általános szerződési feltételek</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Üzletszabályzat</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >MNB – Minősített fogyasztóbarát lakáshitel</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none"
+              >Előzetes tájékoztatás</a
+            >
+          </li>
         </ul>
       </div>
     </div>
 
     <div class="row mt-4">
       <div class="col-md-6">
-        <p class="text-white-50">© 2024 – K&H Bank Zrt. Minden jog fenntartva.</p>
+        <p class="text-white-50">
+          © 2024 – K&H Bank Zrt. Minden jog fenntartva.
+        </p>
       </div>
       <div class="col-md-6 text-md-end">
-        <a href="#" class="text-white text-decoration-none me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-white text-decoration-none me-3"><i class="bi bi-linkedin"></i></a>
-        <a href="#" class="text-white text-decoration-none me-3"><i class="bi bi-youtube"></i></a>
-        <a href="#" class="text-white text-decoration-none"><i class="bi bi-rss"></i></a>
+        <a href="#" class="text-white text-decoration-none me-3"
+          ><i class="bi bi-facebook"></i
+        ></a>
+        <a href="#" class="text-white text-decoration-none me-3"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+        <a href="#" class="text-white text-decoration-none me-3"
+          ><i class="bi bi-youtube"></i
+        ></a>
+        <a href="#" class="text-white text-decoration-none"
+          ><i class="bi bi-rss"></i
+        ></a>
       </div>
     </div>
   </div>

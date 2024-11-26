@@ -1,0 +1,53 @@
+/* Kalkulátor kártya stílus */
+.calculator-card {
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Új szekció kártya stílus */
+.new-section-card {
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+/* Ikonok nagyobb méret */
+.icon-large {
+  width: 80px;
+  height: auto;
+}
+
+/* Input mezők */
+.custom-input {
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Gombok stílusa */
+.custom-btn {
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Szöveg kisebb méret */
+.new-section-card h5 {
+  font-size: 1rem;
+}
