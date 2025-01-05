@@ -1,5 +1,5 @@
 footer {
-  background-color: #007dc5; /* K&H arculati kék szín */
+  background-color: #3f51b5; /* Indigókék */
 }
 
 footer a {
@@ -8,9 +8,13 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-  color: #f0f0f0;
+  color: #e0e0e0;
 }
 
 .text-white-50 {
   color: rgba(255, 255, 255, 0.5) !important;
+}
+
+footer .logo {
+  border-radius: 50%; /* Kör alakú logó */
 }

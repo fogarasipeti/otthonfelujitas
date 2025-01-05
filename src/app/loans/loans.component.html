@@ -1,5 +1,7 @@
 <div class="container mt-5" *ngIf="totalAmount > 0">
-  <h3 class="text-center mb-4">Kölcsönajánlatok</h3>
+  <h3 class="text-center mb-4">
+    várható törlesztőrészletek ha hitelt is vennél fel a teljes összegre
+  </h3>
   <div class="row g-4">
     <!-- Személyi Kölcsön Kártya -->
     <div class="col-md-6">
@@ -16,9 +18,6 @@
               {{ personalLoanMonthlyPayment | number : "1.0-0" }} Ft/hó
             </span>
           </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-primary w-100">Érdekel</button>
         </div>
       </div>
     </div>
@@ -37,9 +36,6 @@
               {{ homeRenovationLoanMonthlyPayment | number : "1.0-0" }} Ft/hó
             </span>
           </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-outline-success w-100">Érdekel</button>
         </div>
       </div>
     </div>

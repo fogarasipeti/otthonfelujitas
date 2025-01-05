@@ -18,7 +18,7 @@ export class LoansComponent {
   }
 
   get personalLoanMonthlyPayment(): number {
-    return this.calculateMonthlyPayment(this.totalAmount, 8, 84);
+    return this.calculateMonthlyPayment(this.totalAmount, 12, 84);
   }
 
   get homeRenovationLoanMonthlyPayment(): number {
