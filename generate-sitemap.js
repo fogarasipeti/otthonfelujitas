@@ -1,23 +1,27 @@
-const sitemap = require("sitemap");
+const { SitemapStream, streamToPromise } = require("sitemap");
 const fs = require("fs");
 
-// Sitemap generálása
-const sitemapInstance = sitemap.createSitemap({
-  hostname: "https://www.otthonkorszerusites.hu",
-  cacheTime: 600000, // 10 perc cache idő
-  urls: [
-    { url: "/", changefreq: "daily", priority: 1.0 },
-    { url: "/about", changefreq: "weekly", priority: 0.8 },
-    { url: "/contact", changefreq: "monthly", priority: 0.5 },
-  ],
-});
+// Sitemap konfiguráció
+const sitemapUrls = [{ url: "/", changefreq: "daily", priority: 1.0 }];
 
-// Generáljuk a sitemap XML-t
-sitemapInstance.toXML((err, xml) => {
-  if (err) {
-    return console.error(err);
+(async () => {
+  try {
+    // Sitemap stream létrehozása
+    const stream = new SitemapStream({
+      hostname: "https://www.otthonkorszerusites.hu",
+    });
+
+    // URL-ek hozzáadása a streamhez
+    sitemapUrls.forEach((entry) => stream.write(entry));
+    stream.end();
+
+    // Stream átalakítása XML-fájllá
+    const xml = await streamToPromise(stream).then((data) => data.toString());
+
+    // XML mentése fájlba
+    fs.writeFileSync("sitemap.xml", xml);
+    console.log("Sitemap sikeresen generálva!");
+  } catch (err) {
+    console.error("Hiba történt a sitemap generálása közben:", err);
   }
-  // Írjuk a fájlt a rendszerbe
-  fs.writeFileSync("sitemap.xml", xml);
-  console.log("Sitemap successfully generated!");
-});
+})();
