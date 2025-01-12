@@ -13,10 +13,7 @@ import { LoansComponent } from './loans/loans.component';
     DiscountsComponent,
     LoansComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule, // ngModel használata miatt
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
