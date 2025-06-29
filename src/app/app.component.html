@@ -644,18 +644,6 @@
   <app-discounts #discountSection [showDiscounts]="showLoans"></app-discounts>
 </section>
 
-<section class="container my-5">
-  <app-calculations
-    (calculationCompleted)="onCalculationResult($event)"
-  ></app-calculations>
-  <app-loans
-    #loansSection
-    *ngIf="showLoans"
-    [totalAmount]="totalAmount"
-  ></app-loans>
-  <app-discounts #discountSection [showDiscounts]="showLoans"></app-discounts>
-</section>
-
 <!-- Jogi nyilatkozat -->
 <section class="container mb-4">
   <div class="alert alert-secondary small text-center" role="alert">
