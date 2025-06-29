@@ -4,14 +4,17 @@ import {
   Output,
   ElementRef,
   ViewChild,
+  AfterViewInit,
 } from '@angular/core';
+
+declare var bootstrap: any; // Globális deklaráció
 
 @Component({
   selector: 'app-calculations',
   templateUrl: './calculations.component.html',
   styleUrls: ['./calculations.component.css'],
 })
-export class CalculationsComponent {
+export class CalculationsComponent implements AfterViewInit {
   materialCost: number = 0;
   laborCost: number = 0;
   previousSupport: number = 0;
@@ -22,6 +25,15 @@ export class CalculationsComponent {
 
   // Referencia az app-loans szekcióhoz
   @ViewChild('discountSection', { static: false }) discountSection!: ElementRef;
+
+  ngAfterViewInit() {
+    const tooltipTriggerList = Array.from(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    tooltipTriggerList.forEach((tooltipTriggerEl) => {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }
 
   calculate() {
     this.totalAmount = this.materialCost + this.laborCost;

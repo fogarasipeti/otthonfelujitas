@@ -7,7 +7,7 @@
           <h4
             class="card-title text-center text-uppercase fw-bold text-bg-success text-shadow mb-4"
           >
-            Vidéki Otthonfelújítási Program Kalkulátor
+            Vidéki Otthonfelújítási Támogatás Kalkulátor
           </h4>
           <form (ngSubmit)="calculate()">
             <div class="row g-3">
@@ -37,9 +37,16 @@
               </div>
             </div>
             <div class="mt-3">
-              <label for="previousSupport" class="form-label"
-                >Korábban kapott támogatás (Ft)</label
-              >
+              <label for="previousSupport" class="form-label">
+                Korábban kapott támogatás (Ft)
+                <i
+                  class="bi bi-info-circle-fill text-info ms-1"
+                  tabindex="0"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  title="A támogatás a felújítási munkákat követően utólag, csak egy alkalommal vehető igénybe úgy, hogy nem akadály a korábbi otthonfelújítási támogatás igénybe vétele, de csak a 3 millióból még fennmaradt különbözetet lehet igénybe venni."
+                ></i>
+              </label>
               <input
                 type="number"
                 class="form-control custom-input"

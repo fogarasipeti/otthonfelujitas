@@ -1,0 +1,27 @@
+<section class="container my-5">
+  <h5 class="mb-3 text-primary">Jogosult település ellenőrzése</h5>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Írj be egy településnevet..."
+      [(ngModel)]="searchInput"
+      (keyup.enter)="checkEligibility()"
+    />
+    <button class="btn btn-primary" (click)="checkEligibility()">
+      Keresés
+    </button>
+  </div>
+
+  <div
+    *ngIf="isEligible !== null"
+    class="alert"
+    [ngClass]="{
+      'alert-success': isEligible,
+      'alert-danger': !isEligible
+    }"
+  >
+    {{ isEligible ? "Támogatott település ✅" : "Nem támogatott település ❌" }}
+  </div>
+</section>
